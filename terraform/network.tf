@@ -8,11 +8,11 @@ module "network" { #Create a new module resource for every new account you want 
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "asumedh+networktest@amazon.com" #Account email must be unique and you should be able to verify account through email, Usage :- user+accountname@domain
-    AccountName               = "networktest" # Account Name
+    AccountEmail              = "asumedh+networktgw@amazon.com" #Account email must be unique and you should be able to verify account through email, Usage :- user+accountname@domain
+    AccountName               = "networktgw" # Account Name
     ManagedOrganizationalUnit = "SharedService (ou-4uhe-rxqd3odi)" #if you are using nested OUs, include the OU ID in parentheses, such as Sandbox (ou-44...)
-    SSOUserEmail              = "asumedh+networktest@amazon.com" #Account email must be unique and you should be able to verify through email id specfied
-    SSOUserFirstName          = "asumedh" #You can specify user first name 
+    SSOUserEmail              = "asumedh+networktgw@amazon.com" #Account email must be unique and you should be able to verify through email id specfied
+    SSOUserFirstName          = "sumedh" #You can specify user first name 
     SSOUserLastName           = "Ambapkar" #You can specify user last name 
   }
 
