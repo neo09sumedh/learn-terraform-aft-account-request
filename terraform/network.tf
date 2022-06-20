@@ -8,10 +8,10 @@ module "network" { #Create a new module resource for every new account you want 
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "asumedh+networktgw@amazon.com" #Account email must be unique and you should be able to verify account through email, Usage :- user+accountname@domain
-    AccountName               = "networktgw" # Account Name
+    AccountEmail              = "asumedh+networkAFT@amazon.com" #Account email must be unique and you should be able to verify account through email, Usage :- user+accountname@domain
+    AccountName               = "networkAFT" # Account Name
     ManagedOrganizationalUnit = "SharedService (ou-4uhe-rxqd3odi)" #if you are using nested OUs, include the OU ID in parentheses, such as Sandbox (ou-44...)
-    SSOUserEmail              = "asumedh+networktgw@amazon.com" #Account email must be unique and you should be able to verify through email id specfied
+    SSOUserEmail              = "asumedh+networkAFT@amazon.com" #Account email must be unique and you should be able to verify through email id specfied
     SSOUserFirstName          = "sumedh" #You can specify user first name 
     SSOUserLastName           = "Ambapkar" #You can specify user last name 
   }
@@ -29,6 +29,8 @@ module "network" { #Create a new module resource for every new account you want 
     # Below example demonstrate IPAM CIDR set in parameter store in network account for different IPAM pool like PROD and DEV
     prd_ipam_cidr = "10.102.0.0/16"  #Set IPAM CIDR as per your requirement, This attribute will be stored in parameter Store of newly network account created
     dev_ipam_cidr = "10.104.0.0/16"  #Set IPAM CIDR as per your requirement, This attribute will be stored in parameter Store of newly network account created
+    dev_ou = "arn:aws:organizations::925395589051:ou/o-hyyzavlm7a/ou-4uhe-u1avwiyp"
+    prd_ou = "arn:aws:organizations::925395589051:ou/o-hyyzavlm7a/ou-4uhe-xabhcjk2"
   }
   
   #Below attribute will execute code in network folder of account customizations repository which is for creation of TransitGateway and IPAM
