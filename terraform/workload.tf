@@ -3,11 +3,11 @@
 # You can change attributes per your requirements and same will used while provisioning the account.                                                            #
 # Pre-requisite for executing this script is ManagedOrganizationalUnit should already been created.                                                             #
 #################################################################################################################################################################
-module "bu-prod" { #Create a new module resource for every new account you want to provision ,You can  define module name as per your requirement
+module "bu-prod-Ten" { #Create a new module resource for every new account you want to provision ,You can  define module name as per your requirement
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "asumedh+prodbutwo@amazon.com" #Account email must be unique and you should be able to verify account through email, Usage :- user+accountname@domain
+    AccountEmail              = "asumedh+prodbuten@amazon.com" #Account email must be unique and you should be able to verify account through email, Usage :- user+accountname@domain
     AccountName               = "prodbuten" # Account Name
     ManagedOrganizationalUnit = "Prod (ou-4uhe-xabhcjk2)" #f you are using nested OUs, include the OU ID in parentheses, such as Sandbox (ou-44...)
     SSOUserEmail              = "asumedh+prodbuten@amazon.com" #Account email must be unique and you should be able to verify through email id specfied
